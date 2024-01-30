@@ -6,7 +6,7 @@
 /*   By: joao-vri <joao-vri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 10:42:08 by joao-vri          #+#    #+#             */
-/*   Updated: 2024/01/25 16:03:32 by joao-vri         ###   ########.fr       */
+/*   Updated: 2024/01/30 13:52:11 by joao-vri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	ft_putnbr(int nb)
 		ft_putchar(nb + '0');
 }
 
-int	main(void)
+/*int	main(void)
 {
 	ft_putnbr(-2147483648);
 	write (1, "\n", 1);
 	ft_putnbr(-12345);
 	write (1, "\n", 1);
-}
+}*/
