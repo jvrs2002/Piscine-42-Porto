@@ -12,15 +12,16 @@
 
 int	ft_sqrt(int nb)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (i * i < nb)
-		i++;
-	if (i * i == nb)
-		return (i);
-	else
+	if (nb <= 0)
 		return (0);
+	while (i * i < (unsigned int)nb)
+		i++;
+	if (i * i == (unsigned int)nb)
+		return (i);
+	return (0);
 }
 
 /*#include <stdio.h>

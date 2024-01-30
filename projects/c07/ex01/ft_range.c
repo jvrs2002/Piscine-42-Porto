@@ -1,42 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joao-vri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 15:33:45 by joao-vri          #+#    #+#             */
-/*   Updated: 2024/01/30 15:51:43 by joao-vri         ###   ########.fr       */
+/*   Created: 2024/01/30 16:09:13 by joao-vri          #+#    #+#             */
+/*   Updated: 2024/01/30 16:38:53 by joao-vri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+int	*ft_range(int min, int max)
 {
-	int		i;
-	char	*dup;
+	int	i;
+	int	n;
+	int	*nbrs;
 
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	dup = (char *)malloc(sizeof(char) * (i + 1));
-	if (src == NULL)
+	if (min >= max)
 		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
+	i = max - min;
+	nbrs = (int *)malloc(sizeof(int) * i);
+	i = min;
+	n = 0;
+	while (i < max)
 	{
-		dup[i] = src[i];
+		nbrs[n] = i;
 		i++;
+		n++;
 	}
-	dup[i] = '\0';
-	return (dup);
+	return (nbrs);
 }
 
 /*#include <stdio.h>
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	ac = -ac;
-	printf("%s", ft_strdup(av[1]));
+	int	i;
+	int	*range_result;
+	
+	range_result = ft_range(3, 10);
+	i = 0;
+	while (range_result[i] != '\0')
+	{
+		printf("%i\n", range_result[i]);
+		i++;
+	}
 }*/
