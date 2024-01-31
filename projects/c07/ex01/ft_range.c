@@ -21,7 +21,7 @@ int	*ft_range(int min, int max)
 	if (min >= max)
 		return (NULL);
 	i = max - min;
-	nbrs = (int *)malloc(sizeof(int) * i);
+	nbrs = malloc(sizeof(int *) * i);
 	i = min;
 	n = 0;
 	while (i < max)
