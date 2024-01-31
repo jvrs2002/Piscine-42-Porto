@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joao-vri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 15:33:45 by joao-vri          #+#    #+#             */
-/*   Updated: 2024/01/30 15:51:43 by joao-vri         ###   ########.fr       */
+/*   Created: 2024/01/31 10:40:23 by joao-vri          #+#    #+#             */
+/*   Updated: 2024/01/31 11:07:59 by joao-vri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	int		i;
-	char	*dup;
+	int	i;
+	int	*nbrs;
 
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	dup = malloc(sizeof(char *) * (i + 1));
-	if (src == NULL)
-		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
+	if (min >= max)
 	{
-		dup[i] = src[i];
+		*range = NULL;
+		return (0);
+	}
+	i = max - min;
+	nbrs = malloc(sizeof(int *) * i);
+	if (nbrs == NULL)
+	{
+		*range = NULL;
+		return (-1);
+	}
+	*range = nbrs;
+	i = 0;
+	while (min < max)
+	{
+		nbrs[i] = min;
+		min++;
 		i++;
 	}
-	dup[i] = '\0';
-	return (dup);
+	return (i);
 }
-
-/*#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	ac = -ac;
-	printf("%s", ft_strdup(av[1]));
-}*/
