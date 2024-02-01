@@ -17,22 +17,16 @@ char	*ft_strstr(char *str, char *to_find)
 	int	i;
 	int	n;
 
-	if (*to_find == '\0')
-		return (str);
 	i = 0;
-	n = 0;
+	if (str[0] == 0 && to_find[0] == 0)
+		return (str);
 	while (str[i] != '\0')
 	{
-		while (str[i] == to_find[n])
-		{
-			i++;
-			n++;
-			if (to_find[n] == '\0')
-				return (str + i - n);
-			if (str[i] != to_find[n])
-				i -= n;
-		}
 		n = 0;
+		while (to_find[n] != '\0' && str[i + n] == to_find[n])
+			n++;
+		if (to_find[n] == '\0')
+			return (str + i);
 		i++;
 	}
 	return (0);
