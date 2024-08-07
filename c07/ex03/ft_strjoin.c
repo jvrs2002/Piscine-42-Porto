@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//THIS DIDN'T PASS THROUGH MOULINETTE
+
 #include <stdlib.h>
 
 int	ft_strlen(char	**str, char *sep, int size)
